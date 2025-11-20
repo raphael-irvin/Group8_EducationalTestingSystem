@@ -7,34 +7,36 @@ import Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions.TopicBuil
 public class Main {
 
     public static void main(String[] args) {
-        Topic mathTopic = (TopicBuilder.getInstance()).buildTopic("Basic Mathematics", "Basic Math Questions");
+        Topic mathTopic = TopicBuilder.getInstance().buildTopic("Basic Mathematics", "Basic Math Questions");
 
-        mathTopic.addMCQQuestion(QuestionFactory.getInstance().createMultipleChoiceQuestion(
+        QuestionFactory factory = QuestionFactory.getInstance();
+
+        mathTopic.addMCQQuestion(factory.createMultipleChoiceQuestion(
                 "What is 2+2",
                 1,
                 "4",
                 "1", "2", "3"
         ));
 
-        mathTopic.addMCQQuestion(QuestionFactory.getInstance().createMultipleChoiceQuestion(
+        mathTopic.addMCQQuestion(factory.createMultipleChoiceQuestion(
                 "What is 2*2",
                 1,
                 "4",
                 "1", "2", "3"
         ));
 
-        mathTopic.addMCQQuestion(QuestionFactory.getInstance().createMultipleChoiceQuestion(
+        mathTopic.addMCQQuestion(factory.createMultipleChoiceQuestion(
                 "What is 2/2",
                 1,
                 "1",
                 "2", "3", "4"
         ));
 
-        mathTopic.addTrueOrFalseQuestion(QuestionFactory.getInstance().createTrueFalseQuestion(
+        mathTopic.addTrueOrFalseQuestion(factory.createTrueFalseQuestion(
                 "Is 5 a prime number?", 1, true
         ));
 
-        mathTopic.addTrueOrFalseQuestion(QuestionFactory.getInstance().createTrueFalseQuestion(
+        mathTopic.addTrueOrFalseQuestion(factory.createTrueFalseQuestion(
                 "Is 10 greater than 20?", 1, false
         ));
 
