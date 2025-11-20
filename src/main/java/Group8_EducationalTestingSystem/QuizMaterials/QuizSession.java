@@ -1,12 +1,15 @@
-package Group8_EducationalTestingSystem;
+package Group8_EducationalTestingSystem.QuizMaterials;
 
 /*
 CLASS INFORMATION:
 The QuizSession will be instantiated when a student starts a quiz. It will hold information about the current quiz session for that student.
  */
 
+import Group8_EducationalTestingSystem.QuizMaterials.Reports.ReportFactory;
+import Group8_EducationalTestingSystem.QuizMaterials.Reports.ReportSummary;
 import Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions.Question;
 import Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions.Topic;
+import Group8_EducationalTestingSystem.Student;
 
 import java.util.ArrayList;
 
@@ -19,8 +22,7 @@ public class QuizSession {
     private ArrayList<Question> questions;
 
     // Score and Performance Data
-    private double score;
-    private String feedback;
+    private ReportSummary reportSummary;
 
     // Default Constructor
     public QuizSession(Student student, Topic selectedTopic) {
@@ -32,20 +34,26 @@ public class QuizSession {
         // TODO: Logic to start the quiz session
     }
 
-    public void evaluateQuiz() {
+    public void finishQuiz() {
         // TODO: Logic to evaluate the quiz and calculate score
-    }
-
-    public void provideFeedback() {
-        // TODO: Logic to generate feedback based on performance
+        this.reportSummary = ReportFactory.getInstance().generateReportSummary(this);
     }
 
     // Getters and Setters
-    public double getScore() {
-        return score;
+
+    public Student getStudent() {
+        return student;
     }
 
-    public String getFeedback() {
-        return feedback;
+    public Topic getSelectedTopic() {
+        return selectedTopic;
+    }
+
+    public ArrayList<Question> getQuestions() {
+        return questions;
+    }
+
+    public ReportSummary getReportSummary() {
+        return reportSummary;
     }
 }
