@@ -19,6 +19,7 @@ public class QuizSession {
     // Session Information
     private Student student;
     private Topic selectedTopic;
+    private String difficultyLevel;
     private ArrayList<Question> questions;
 
     // Score and Performance Data

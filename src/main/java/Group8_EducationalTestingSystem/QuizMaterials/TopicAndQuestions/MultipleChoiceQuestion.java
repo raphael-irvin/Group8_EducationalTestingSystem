@@ -18,8 +18,8 @@ public class MultipleChoiceQuestion extends Question implements QuestionType {
     private String currentAnswer;
 
     // Constructor
-    protected MultipleChoiceQuestion(String questionText, String topicField, ArrayList<String> options, String correctAnswer) {
-        super(questionText, topicField);
+    protected MultipleChoiceQuestion(String questionText, int difficultyLevel, ArrayList<String> options, String correctAnswer) {
+        super(questionText, difficultyLevel);
         this.options = options;
         this.correctAnswer = correctAnswer;
     }

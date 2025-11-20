@@ -23,14 +23,14 @@ public abstract class Question {
     // ATTRIBUTES
     // Question Information
     private String questionText;
-    private String topicField;
+    private int difficultyLevel;
 
     // NOTE: Answer Attributes are declared separately in each subclass due to differing types
 
     //Default Constructor is protected to prevent direct instantiation
-    protected Question(String questionText, String topicField) {
+    protected Question(String questionText, int difficultyLevel) {
         this.questionText = questionText;
-        this.topicField = topicField;
+        this.difficultyLevel = difficultyLevel;
     }
 }
 

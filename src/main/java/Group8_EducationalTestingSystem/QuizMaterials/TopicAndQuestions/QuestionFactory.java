@@ -31,15 +31,15 @@ public class QuestionFactory {
     }
 
     // Method to create a Multiple Choice Question
-    public MultipleChoiceQuestion createMultipleChoiceQuestion(String questionText, String topicField, String correctAnswer, String... wrongAnswers) {
+    public MultipleChoiceQuestion createMultipleChoiceQuestion(String questionText, int difficultyLevel, String correctAnswer, String... wrongAnswers) {
         ArrayList<String> options = new ArrayList<>();
         options.add(correctAnswer);
         options.addAll(Arrays.asList(wrongAnswers));
-        return new MultipleChoiceQuestion(questionText, topicField, options, correctAnswer);
+        return new MultipleChoiceQuestion(questionText, difficultyLevel, options, correctAnswer);
     }
 
     // Method to create a True/False Question
-    public TrueOrFalseQuestion createTrueFalseQuestion(String questionText, String topicField, boolean correctAnswer) {
-        return new TrueOrFalseQuestion(questionText, topicField, correctAnswer);
+    public TrueOrFalseQuestion createTrueFalseQuestion(String questionText, int difficultyLevel, boolean correctAnswer) {
+        return new TrueOrFalseQuestion(questionText, difficultyLevel, correctAnswer);
     }
 }
