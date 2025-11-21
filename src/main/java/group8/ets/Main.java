@@ -1,8 +1,8 @@
-package Group8_EducationalTestingSystem;
+package group8.ets;
 
-import Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions.QuestionFactory;
-import Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions.Topic;
-import Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions.TopicBuilder;
+import group8.ets.quizmaterials.topicandquestions.QuestionFactory;
+import group8.ets.quizmaterials.topicandquestions.Topic;
+import group8.ets.quizmaterials.topicandquestions.TopicBuilder;
 
 public class Main {
 

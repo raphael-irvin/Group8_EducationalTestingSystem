@@ -1,15 +1,15 @@
-package Group8_EducationalTestingSystem.QuizMaterials;
+package group8.ets.quizmaterials;
 
 /*
 CLASS INFORMATION:
 The QuizSession will be instantiated when a student starts a quiz. It will hold information about the current quiz session for that student.
  */
 
-import Group8_EducationalTestingSystem.QuizMaterials.Reports.ReportFactory;
-import Group8_EducationalTestingSystem.QuizMaterials.Reports.ReportSummary;
-import Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions.Question;
-import Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions.Topic;
-import Group8_EducationalTestingSystem.Student;
+import group8.ets.quizmaterials.reports.ReportFactory;
+import group8.ets.quizmaterials.reports.ReportSummary;
+import group8.ets.quizmaterials.topicandquestions.Question;
+import group8.ets.quizmaterials.topicandquestions.Topic;
+import group8.ets.Student;
 
 import java.util.ArrayList;
 

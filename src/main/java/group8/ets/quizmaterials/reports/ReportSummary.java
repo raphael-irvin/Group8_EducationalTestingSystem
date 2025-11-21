@@ -1,4 +1,4 @@
-package Group8_EducationalTestingSystem.QuizMaterials.Reports;
+package group8.ets.quizmaterials.reports;
 
 /*
 CLASS INFORMATION:

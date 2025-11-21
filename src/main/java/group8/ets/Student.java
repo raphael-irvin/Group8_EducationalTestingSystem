@@ -1,4 +1,4 @@
-package Group8_EducationalTestingSystem;
+package group8.ets;
 
 /*
 CLASS INFORMATION:

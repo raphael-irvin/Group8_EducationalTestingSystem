@@ -1,4 +1,4 @@
-package Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions;
+package group8.ets.quizmaterials.topicandquestions;
 
 /*
 CLASS INFORMATION:
@@ -6,7 +6,7 @@ The Topic class represents a subject or category for quiz questions.
 The Topic will affect which questions are presented to the student during a quiz session through their respective QuestionBank.
  */
 
-import Group8_EducationalTestingSystem.Utility;
+import group8.ets.Utility;
 
 public class Topic {
 

@@ -1,4 +1,4 @@
-package Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions;
+package group8.ets.quizmaterials.topicandquestions;
 
 /*
 CLASS INFORMATION:
@@ -7,7 +7,7 @@ It follows the Builder design pattern to allow for step-by-step construction of 
 It is Singleton to ensure only one instance of the builder exists.
  */
 
-import Group8_EducationalTestingSystem.Utility;
+import group8.ets.Utility;
 
 public class TopicBuilder {
 

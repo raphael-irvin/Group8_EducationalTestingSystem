@@ -1,4 +1,4 @@
-package Group8_EducationalTestingSystem.QuizMaterials.TopicAndQuestions;
+package group8.ets.quizmaterials.topicandquestions;
 
 /*
 CLASS INFORMATION:
@@ -7,7 +7,7 @@ It provides methods to generate questions based on specified parameters, ensurin
 It is Singleton in nature, ensuring that only one instance of the factory exists throughout the application.
  */
 
-import Group8_EducationalTestingSystem.Utility;
+import group8.ets.Utility;
 
 import java.util.ArrayList;
 import java.util.Arrays;

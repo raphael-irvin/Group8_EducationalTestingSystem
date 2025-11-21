@@ -1,4 +1,4 @@
-package Group8_EducationalTestingSystem.QuizMaterials.Reports;
+package group8.ets.quizmaterials.reports;
 
 /*
 CLASS INFORMATION:
@@ -9,8 +9,8 @@ It is Singleton in nature, ensuring that only one instance of the service exists
  */
 
 
-import Group8_EducationalTestingSystem.QuizMaterials.QuizSession;
-import Group8_EducationalTestingSystem.Utility;
+import group8.ets.quizmaterials.QuizSession;
+import group8.ets.Utility;
 
 public class FeedbackGeneratorService {
 
