@@ -12,7 +12,7 @@ import group8.ets.Utility;
 public class ReportFactory implements IReportFactory{
 
     // Constructor
-    public ReportFactory(QuizSession quizSession) {
+    public ReportFactory() {
         Utility.log("ReportFactory instance created.");
     }
 

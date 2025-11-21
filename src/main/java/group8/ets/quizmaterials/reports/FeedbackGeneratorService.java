@@ -14,7 +14,7 @@ import group8.ets.Utility;
 public class FeedbackGeneratorService implements IFeedbackGeneratorService{
 
     // Constructor
-    private FeedbackGeneratorService() {
+    public FeedbackGeneratorService() {
         Utility.log("FeedbackGeneratorService instance created.");
     }
 

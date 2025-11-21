@@ -28,8 +28,10 @@ public class QuizSession {
     private ReportSummary reportSummary;
 
     // Default Constructor
-    public QuizSession(Student student, Topic selectedTopic) {
-        reportFactory = new ReportFactory(this);
+    public QuizSession(Student student, Topic selectedTopic, IReportFactory iReportFactory) {
+        this.student = student;
+        this.selectedTopic = selectedTopic;
+        this.reportFactory = iReportFactory;
         // TODO: Initialize Necessary Setups (Questions, Index, Timer, etc.)
     }
 
