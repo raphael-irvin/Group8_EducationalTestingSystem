@@ -8,7 +8,7 @@ IMPORTANT: IT IS NOT DESIGNED TO BE INSTANTIATED DIRECTLY FROM THE MAIN CLASS.
 -> The QuestionFactory is responsible for creating instances of this class.
  */
 
-public class TrueOrFalseQuestion extends Question implements QuestionType {
+public class TrueOrFalseQuestion extends Question {
 
     // ATTRIBUTES
     private final boolean correctAnswer;
@@ -18,11 +18,6 @@ public class TrueOrFalseQuestion extends Question implements QuestionType {
     protected TrueOrFalseQuestion(String questionText, int difficultyLevel, boolean correctAnswer) {
         super(questionText, difficultyLevel);
         this.correctAnswer = correctAnswer;
-    }
-
-    @Override
-    public void displayQuestion() {
-        // TODO: Logic to display the question
     }
 
     @Override

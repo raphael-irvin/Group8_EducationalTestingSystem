@@ -10,7 +10,7 @@ IMPORTANT: IT IS NOT DESIGNED TO BE INSTANTIATED DIRECTLY FROM THE MAIN CLASS.
 
 import java.util.ArrayList;
 
-public class MultipleChoiceQuestion extends Question implements QuestionType {
+public class MultipleChoiceQuestion extends Question {
 
     // ATTRIBUTES
     private ArrayList<String> options;
@@ -22,11 +22,6 @@ public class MultipleChoiceQuestion extends Question implements QuestionType {
         super(questionText, difficultyLevel);
         this.options = options;
         this.correctAnswer = correctAnswer;
-    }
-
-    @Override
-    public void displayQuestion() {
-        // TODO: Logic to display the question and options
     }
 
     @Override
