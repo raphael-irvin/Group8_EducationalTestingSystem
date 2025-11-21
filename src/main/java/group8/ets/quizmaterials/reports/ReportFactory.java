@@ -11,7 +11,7 @@ import group8.ets.Utility;
 
 public class ReportFactory implements IReportFactory{
 
-    // Private constructor to prevent instantiation
+    // Constructor
     public ReportFactory(QuizSession quizSession) {
         Utility.log("ReportFactory instance created.");
     }

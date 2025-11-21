@@ -7,9 +7,10 @@ import group8.ets.quizmaterials.topicandquestions.TopicBuilder;
 public class Main {
 
     public static void main(String[] args) {
-        Topic mathTopic = TopicBuilder.getInstance().buildTopic("Basic Mathematics", "Basic Math Questions");
+        TopicBuilder topicBuilder = new TopicBuilder();
+        Topic mathTopic = topicBuilder.buildTopic("Basic Mathematics", "Basic Math Questions");
 
-        QuestionFactory factory = QuestionFactory.getInstance();
+        QuestionFactory factory = new QuestionFactory();
 
         mathTopic.addMCQQuestion(factory.createMultipleChoiceQuestion(
                 "What is 2+2",

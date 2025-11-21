@@ -4,5 +4,5 @@ import group8.ets.quizmaterials.QuizSession;
 
 public interface IReportFactory {
 
-    public ReportSummary generateReportSummary(QuizSession quizSession);
+    ReportSummary generateReportSummary(QuizSession quizSession);
 }

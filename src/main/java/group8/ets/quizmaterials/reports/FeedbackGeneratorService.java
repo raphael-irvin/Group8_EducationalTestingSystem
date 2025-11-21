@@ -5,29 +5,17 @@ CLASS INFORMATION:
 The FeedbackGeneratorService is responsible for generating feedback based on the performance of a QuizSession.
 It shall implement External OpenAI API to generate detailed and personalized feedback for students.
 It shall process the QuizSession data and interact with the OpenAI API to obtain feedback.
-It is Singleton in nature, ensuring that only one instance of the service exists throughout the application.
  */
 
 
 import group8.ets.quizmaterials.QuizSession;
 import group8.ets.Utility;
 
-public class FeedbackGeneratorService {
+public class FeedbackGeneratorService implements IFeedbackGeneratorService{
 
-    // Singleton Instance
-    private static FeedbackGeneratorService instance;
-
-    // Private constructor to prevent instantiation
+    // Constructor
     private FeedbackGeneratorService() {
         Utility.log("FeedbackGeneratorService instance created.");
-    }
-
-    // Get Singleton Instance
-    public static FeedbackGeneratorService getInstance() {
-        if (instance == null) {
-            instance = new FeedbackGeneratorService();
-        }
-        return instance;
     }
 
     // Method to generate feedback based on QuizSession data

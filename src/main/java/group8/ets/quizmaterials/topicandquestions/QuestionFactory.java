@@ -4,7 +4,6 @@ package group8.ets.quizmaterials.topicandquestions;
 CLASS INFORMATION:
 The QuestionFactory class is responsible for creating instances of different types of questions.
 It provides methods to generate questions based on specified parameters, ensuring that the correct question type is instantiated with the appropriate attributes.
-It is Singleton in nature, ensuring that only one instance of the factory exists throughout the application.
  */
 
 import group8.ets.Utility;
@@ -12,22 +11,11 @@ import group8.ets.Utility;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class QuestionFactory {
+public class QuestionFactory implements IQuestionFactory{
 
-    // Singleton Instance
-    private static QuestionFactory instance;
-
-    // Private constructor to prevent instantiation
-    private QuestionFactory() {
+    // Constructor
+    public QuestionFactory() {
         Utility.log("QuestionFactory instance created.");
-    }
-
-    //Method to verify singleton instance
-    public static QuestionFactory getInstance() {
-        if (instance == null) {
-            instance = new QuestionFactory();
-        }
-        return instance;
     }
 
     // Method to create a Multiple Choice Question
