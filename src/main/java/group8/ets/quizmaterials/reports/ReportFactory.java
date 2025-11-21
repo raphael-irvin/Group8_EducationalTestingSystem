@@ -4,28 +4,16 @@ package group8.ets.quizmaterials.reports;
 CLASS INFORMATION:
 The ReportFactory is responsible to generate a corresponding ReportSummary for a finished QuizSession.
 It provides methods to simplify ReportSummary Object generation.
-It is Singleton in nature, ensuring that only one instance of the factory exists throughout the application.
  */
 
 import group8.ets.quizmaterials.QuizSession;
 import group8.ets.Utility;
 
-public class ReportFactory {
-
-    // Singleton Instance
-    private static ReportFactory instance;
+public class ReportFactory implements IReportFactory{
 
     // Private constructor to prevent instantiation
-    private ReportFactory() {
+    public ReportFactory(QuizSession quizSession) {
         Utility.log("ReportFactory instance created.");
-    }
-
-    // Get Singleton Instance
-    public static ReportFactory getInstance() {
-        if (instance == null) {
-            instance = new ReportFactory();
-        }
-        return instance;
     }
 
     public ReportSummary generateReportSummary(QuizSession quizSession) {

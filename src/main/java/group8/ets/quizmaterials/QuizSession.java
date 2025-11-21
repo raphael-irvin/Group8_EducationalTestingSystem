@@ -5,6 +5,7 @@ CLASS INFORMATION:
 The QuizSession will be instantiated when a student starts a quiz. It will hold information about the current quiz session for that student.
  */
 
+import group8.ets.quizmaterials.reports.IReportFactory;
 import group8.ets.quizmaterials.reports.ReportFactory;
 import group8.ets.quizmaterials.reports.ReportSummary;
 import group8.ets.quizmaterials.topicandquestions.Question;
@@ -23,10 +24,12 @@ public class QuizSession {
     private ArrayList<Question> questions;
 
     // Score and Performance Data
+    private final IReportFactory reportFactory;
     private ReportSummary reportSummary;
 
     // Default Constructor
     public QuizSession(Student student, Topic selectedTopic) {
+        reportFactory = new ReportFactory(this);
         // TODO: Initialize Necessary Setups (Questions, Index, Timer, etc.)
     }
 
@@ -37,7 +40,7 @@ public class QuizSession {
 
     public void finishQuiz() {
         // TODO: Logic to evaluate the quiz and calculate score
-        this.reportSummary = ReportFactory.getInstance().generateReportSummary(this);
+        this.reportSummary = reportFactory.generateReportSummary(this);
     }
 
     // Getters and Setters
