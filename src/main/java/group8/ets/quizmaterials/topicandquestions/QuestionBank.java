@@ -27,6 +27,11 @@ public class QuestionBank {
         // Set output list for valid selected questions
         ArrayList<Question> output = new ArrayList<>();
 
+        // Safety check to prevent infinite loop
+        if (questions.stream().filter(q -> q.getDifficultyLevel() <= difficultyLevel).count() < numberOfQuestions) {
+            throw new IllegalArgumentException("Not enough questions available for the specified difficulty level.");
+        }
+
         // Loop until the output list reaches the desired number of questions
         while (output.size() < numberOfQuestions) {
             // Select a random question from the question bank

@@ -4,6 +4,8 @@ import group8.ets.quizmaterials.topicandquestions.TopicBuilder;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 public class QuestionBankTest {
     Topic topic;
 
@@ -73,7 +75,7 @@ public class QuestionBankTest {
         assert questions.size() == numQuestions;
         for (var question : questions) {
             System.out.println(question.getQuestionText() + " (Difficulty: " + question.getDifficultyLevel() + ")");
-            assert question.getDifficultyLevel() <= difficultyLevel;
+            assertTrue(question.getDifficultyLevel() <= difficultyLevel);
         }
     }
 
@@ -85,7 +87,7 @@ public class QuestionBankTest {
         assert questions.size() == numQuestions;
         for (var question : questions) {
             System.out.println(question.getQuestionText() + " (Difficulty: " + question.getDifficultyLevel() + ")");
-            assert question.getDifficultyLevel() <= difficultyLevel;
+            assertTrue(question.getDifficultyLevel() <= difficultyLevel);
         }
     }
 
@@ -97,7 +99,7 @@ public class QuestionBankTest {
         assert questions.size() == numQuestions;
         for (var question : questions) {
             System.out.println(question.getQuestionText() + " (Difficulty: " + question.getDifficultyLevel() + ")");
-            assert question.getDifficultyLevel() <= difficultyLevel;
+            assertTrue(question.getDifficultyLevel() <= difficultyLevel);
         }
     }
 }

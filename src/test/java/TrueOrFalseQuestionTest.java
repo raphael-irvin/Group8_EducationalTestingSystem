@@ -3,6 +3,8 @@ import group8.ets.quizmaterials.topicandquestions.TrueOrFalseQuestion;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+
 public class TrueOrFalseQuestionTest {
 
     private TrueOrFalseQuestion trueOrFalseQuestion;
@@ -18,7 +20,7 @@ public class TrueOrFalseQuestionTest {
 
     @Test
     public void getCorrectAnswer() {
-        assert trueOrFalseQuestion.getCorrectAnswer().equals("true");
+        assertEquals("true", trueOrFalseQuestion.getCorrectAnswer());
     }
 
     @Test
@@ -29,12 +31,12 @@ public class TrueOrFalseQuestionTest {
     @Test
     public void testCheckAnswer_Correct() {
         trueOrFalseQuestion.setCurrentAnswer("true");
-        assert trueOrFalseQuestion.checkAnswer();
+        assertTrue(trueOrFalseQuestion.checkAnswer());
     }
 
     @Test
     public void testCheckAnswer_Incorrect() {
         trueOrFalseQuestion.setCurrentAnswer("false");
-        assert !trueOrFalseQuestion.checkAnswer();
+        assertFalse(trueOrFalseQuestion.checkAnswer());
     }
 }
