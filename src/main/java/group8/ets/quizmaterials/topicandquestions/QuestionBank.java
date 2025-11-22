@@ -22,7 +22,6 @@ public class QuestionBank {
 
     // Retrieve a Random Set of Questions
     public ArrayList<Question> getRandomQuestions(int numberOfQuestions, int difficultyLevel) {
-        // TODO: Logic to retrieve a random set of questions, limited to numberOfQuestions and filtered by difficultyLevel
         Random rand = new Random();
 
         // Set output list for valid selected questions

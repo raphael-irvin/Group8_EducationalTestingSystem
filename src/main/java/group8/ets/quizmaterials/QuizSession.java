@@ -17,22 +17,25 @@ public class QuizSession {
 
     // ATTRIBUTES
     // Session Information
-    private Student student;
-    private Topic selectedTopic;
-    private String difficultyLevel;
-    private ArrayList<Question> questions;
+    private final Student student;
+    private final Topic selectedTopic;
+    private final int difficultyLevel;
+    private final ArrayList<Question> questions;
 
     // Score and Performance Data
     private final IReportFactory reportFactory;
     private ReportSummary reportSummary;
 
     // Default Constructor
-    public QuizSession(Student student, Topic selectedTopic, String difficultyLevel,IReportFactory iReportFactory) {
+    public QuizSession(Student student, Topic selectedTopic, int difficultyLevel,IReportFactory iReportFactory) {
         this.student = student;
         this.selectedTopic = selectedTopic;
         this.difficultyLevel = difficultyLevel;
         this.reportFactory = iReportFactory;
         // TODO: Initialize Necessary Setups (Questions, Index, Timer, etc.)
+
+        // Setup Questions based on Topic and Difficulty Level
+        this.questions = selectedTopic.getQuestionBank().getRandomQuestions(10, difficultyLevel);
     }
 
     // Session Operations
@@ -41,7 +44,7 @@ public class QuizSession {
     }
 
     public void finishQuiz() {
-        // TODO: Logic to evaluate the quiz and calculate score
+        // All Data and Logic are separated into the ReportSummary class
         this.reportSummary = reportFactory.generateReportSummary(this);
     }
 
@@ -59,7 +62,15 @@ public class QuizSession {
         return questions;
     }
 
+    public int getTotalQuestions() {
+        return questions.size();
+    }
+
     public ReportSummary getReportSummary() {
         return reportSummary;
+    }
+
+    public int getDifficultyLevel() {
+        return difficultyLevel;
     }
 }

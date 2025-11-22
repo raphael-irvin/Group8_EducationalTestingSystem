@@ -33,8 +33,8 @@ public abstract class Question {
     }
 
     // Abstract Methods
-    abstract void setCurrentAnswer(String answer);
-    abstract boolean checkAnswer();
-    abstract String getCorrectAnswer();
+    public abstract void setCurrentAnswer(String answer);
+    public abstract boolean checkAnswer();
+    public abstract String getCorrectAnswer();
 }
 

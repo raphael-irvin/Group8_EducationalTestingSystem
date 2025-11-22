@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class MultipleChoiceQuestion extends Question {
 
     // ATTRIBUTES
-    private ArrayList<String> options;
+    private final ArrayList<String> options;
     private final String correctAnswer;
     private String currentAnswer;
 
