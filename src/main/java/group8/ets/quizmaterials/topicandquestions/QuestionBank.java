@@ -7,6 +7,7 @@ It allows for the storage, retrieval, and management of questions to be used in 
  */
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class QuestionBank {
 
@@ -15,14 +16,29 @@ public class QuestionBank {
     private ArrayList<Question> questions = new ArrayList<>();
 
     // Add a Question to the QuestionBank
-    public void addQuestion(Question question) {
+    protected void addQuestion(Question question) {
         questions.add(question);
     }
 
     // Retrieve a Random Set of Questions
-    public ArrayList<Question> getRandomQuestions(int numberOfQuestions) {
-        // TODO: Logic to retrieve a random set of questions, limited to numberOfQuestions
-        return new ArrayList<>(); // Placeholder return
+    public ArrayList<Question> getRandomQuestions(int numberOfQuestions, int difficultyLevel) {
+        // TODO: Logic to retrieve a random set of questions, limited to numberOfQuestions and filtered by difficultyLevel
+        Random rand = new Random();
+
+        // Set output list for valid selected questions
+        ArrayList<Question> output = new ArrayList<>();
+
+        // Loop until the output list reaches the desired number of questions
+        while (output.size() < numberOfQuestions) {
+            // Select a random question from the question bank
+            Question currentTarget = questions.get(rand.nextInt(0, questions.size()));
+
+            // Check if the question matches the difficulty level and is not already in the output list
+            if (currentTarget.getDifficultyLevel() <= difficultyLevel && !output.contains(currentTarget)) {
+                output.add(currentTarget);
+            }
+        }
+        return output; // Placeholder return
     }
 
     // Getter for all questions

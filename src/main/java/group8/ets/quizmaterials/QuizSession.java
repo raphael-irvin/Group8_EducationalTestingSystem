@@ -6,7 +6,6 @@ The QuizSession will be instantiated when a student starts a quiz. It will hold 
  */
 
 import group8.ets.quizmaterials.reports.IReportFactory;
-import group8.ets.quizmaterials.reports.ReportFactory;
 import group8.ets.quizmaterials.reports.ReportSummary;
 import group8.ets.quizmaterials.topicandquestions.Question;
 import group8.ets.quizmaterials.topicandquestions.Topic;
@@ -28,9 +27,10 @@ public class QuizSession {
     private ReportSummary reportSummary;
 
     // Default Constructor
-    public QuizSession(Student student, Topic selectedTopic, IReportFactory iReportFactory) {
+    public QuizSession(Student student, Topic selectedTopic, String difficultyLevel,IReportFactory iReportFactory) {
         this.student = student;
         this.selectedTopic = selectedTopic;
+        this.difficultyLevel = difficultyLevel;
         this.reportFactory = iReportFactory;
         // TODO: Initialize Necessary Setups (Questions, Index, Timer, etc.)
     }

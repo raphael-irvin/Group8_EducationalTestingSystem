@@ -13,7 +13,6 @@ public class MultipleChoiceQuestionTest {
     private MultipleChoiceQuestion question;
     private final String questionText = "What is the capital of France?";
     private final int difficultyLevel = 2;
-    private final ArrayList<String> options = new ArrayList<>(Arrays.asList("Paris", "London", "Berlin", "Madrid"));
     private final String correctAnswer = "Paris";
 
     @Before
