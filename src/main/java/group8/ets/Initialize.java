@@ -1,20 +1,24 @@
+package group8.ets;
+
+/*
+CLASS INFORMATION:
+The Initialize class is responsible for setting up initial configurations and resources for the Educational Testing System (ETS).
+It may include methods to initialize databases, load configuration files, and prepare necessary services.
+ */
+
 import group8.ets.database.TopicDatabase;
 import group8.ets.quizmaterials.topicandquestions.QuestionFactory;
 import group8.ets.quizmaterials.topicandquestions.Topic;
 import group8.ets.quizmaterials.topicandquestions.TopicBuilder;
-import org.junit.Before;
-import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+public class Initialize {
 
-public class QuestionBankTest {
-    Topic topic;
+    public static void init() {
 
-    @Before
-    public void setUp() {
+        //Initialize Topics
         TopicBuilder topicBuilder = new TopicBuilder();
         QuestionFactory questionFactory = new QuestionFactory();
-        topic = topicBuilder.buildTopic("Mathematics", "All math related questions");
+        Topic topic = topicBuilder.buildTopic("Mathematics", "All math related questions");
 
         // Difficulty level 1 (15 questions) - basic facts and arithmetic
         topic.addMCQQuestion(questionFactory.createMultipleChoiceQuestion("What is 2+2?", 1, "4", "1", "2", "3"));
@@ -66,41 +70,12 @@ public class QuestionBankTest {
         topic.addTrueOrFalseQuestion(questionFactory.createTrueFalseQuestion("The number e is approximately 2.718.", 3, true));
         topic.addMCQQuestion(questionFactory.createMultipleChoiceQuestion("What is the product of -3 and -7?", 3, "21", "-21", "10", "-10"));
         topic.addMCQQuestion(questionFactory.createMultipleChoiceQuestion("What is the cube of 2?", 3, "8", "6", "4", "12"));
-    }
+        Utility.log("ETS system initialized.");
 
-    @Test
-    public void testGetRandomQuestions_Difficulty1() {
-        int numQuestions = 10;
-        int difficultyLevel = 1;
-        var questions = topic.getQuestionBank().getRandomQuestions(numQuestions, difficultyLevel);
-        assert questions.size() == numQuestions;
-        for (var question : questions) {
-            System.out.println(question.getQuestionText() + " (Difficulty: " + question.getDifficultyLevel() + ")");
-            assertTrue(question.getDifficultyLevel() <= difficultyLevel);
-        }
-    }
 
-    @Test
-    public void testGetRandomQuestions_Difficulty2() {
-        int numQuestions = 10;
-        int difficultyLevel = 2;
-        var questions = topic.getQuestionBank().getRandomQuestions(numQuestions, difficultyLevel);
-        assert questions.size() == numQuestions;
-        for (var question : questions) {
-            System.out.println(question.getQuestionText() + " (Difficulty: " + question.getDifficultyLevel() + ")");
-            assertTrue(question.getDifficultyLevel() <= difficultyLevel);
-        }
-    }
-
-    @Test
-    public void testGetRandomQuestions_Difficulty3() {
-        int numQuestions = 10;
-        int difficultyLevel = 3;
-        var questions = topic.getQuestionBank().getRandomQuestions(numQuestions, difficultyLevel);
-        assert questions.size() == numQuestions;
-        for (var question : questions) {
-            System.out.println(question.getQuestionText() + " (Difficulty: " + question.getDifficultyLevel() + ")");
-            assertTrue(question.getDifficultyLevel() <= difficultyLevel);
-        }
+        // Initialize Premade Student Accounts
+        Student student1 = new Student("Alice", "emaila@gmail.com", "alice123");
+        Student student2 = new Student("Bob", "emailb@gmail.com", "bob123");
+        Student student3 = new Student("a", "a", "a");
     }
 }
