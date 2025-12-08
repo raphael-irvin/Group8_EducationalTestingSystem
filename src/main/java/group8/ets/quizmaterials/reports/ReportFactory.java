@@ -42,7 +42,7 @@ public class ReportFactory implements IReportFactory{
         scorePercentage = ((double) correctAnswers / totalQuestions) * 100.0;
 
         // Generate Feedback using FeedbackGeneratorService
-        feedback = feedbackGeneratorService.generateFeedback(quizSession);
+        feedback = feedbackGeneratorService.generateFeedback(quizSession, scorePercentage);
 
         return new ReportSummary(totalQuestions, correctAnswers, incorrectAnswers, scorePercentage, feedback);
     }

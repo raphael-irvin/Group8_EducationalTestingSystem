@@ -32,6 +32,17 @@ public class TrueOrFalseQuestion extends Question {
     }
 
     @Override
+    public String getCurrentAnswer() {
+        if (currentAnswer = true) {
+            return "true";
+        } else if (currentAnswer = false) {
+            return "false";
+        } else {
+            return null; // No answer set
+        }
+    }
+
+    @Override
     public boolean checkAnswer() {
         return currentAnswer != null && currentAnswer == correctAnswer;
     }

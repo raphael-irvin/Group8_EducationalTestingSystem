@@ -34,6 +34,7 @@ public abstract class Question {
 
     // Abstract Methods
     public abstract void setCurrentAnswer(String answer);
+    public abstract String getCurrentAnswer();
     public abstract boolean checkAnswer();
     public abstract String getCorrectAnswer();
 }

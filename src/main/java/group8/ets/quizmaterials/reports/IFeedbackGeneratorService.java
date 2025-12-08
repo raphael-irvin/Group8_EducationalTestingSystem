@@ -4,5 +4,5 @@ import group8.ets.quizmaterials.QuizSession;
 
 public interface IFeedbackGeneratorService {
 
-    String generateFeedback(QuizSession quizSession);
+    String generateFeedback(QuizSession quizSession, double scorePercentage);
 }

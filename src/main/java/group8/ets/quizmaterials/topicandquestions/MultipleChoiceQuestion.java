@@ -22,11 +22,17 @@ public class MultipleChoiceQuestion extends Question {
         super(questionText, difficultyLevel);
         this.options = options;
         this.correctAnswer = correctAnswer;
+        currentAnswer = ""; // No answer selected initially
     }
 
     @Override
     public void setCurrentAnswer(String answer) {
         this.currentAnswer = answer;
+    }
+
+    @Override
+    public String getCurrentAnswer() {
+        return currentAnswer;
     }
 
     @Override

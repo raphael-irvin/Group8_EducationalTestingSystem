@@ -19,12 +19,9 @@ public class FeedbackGeneratorService implements IFeedbackGeneratorService{
     }
 
     // Method to generate feedback based on QuizSession data
-    public String generateFeedback(QuizSession quizSession) {
-        String feedback = "placeholder";
-        // TODO: Implement OpenAI API interaction to generate feedback
-        // 1) Feed Each Question, The Selected Answer, and the Correct Answer to the API
-        // 2) Prompt the API to generate detailed feedback based on the performance
-        // 3) Prompt the API to focus on areas of improvement and strengths
-        return feedback;
+    @Override
+    public String generateFeedback(QuizSession quizSession, double scorePercentage) {
+        return "placeholder feedback";
     }
 }
+
