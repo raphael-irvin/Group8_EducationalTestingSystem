@@ -10,7 +10,7 @@
 
 <!-- Root of the Sign Up screen -->
 
-<AnchorPane prefHeight="450.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group8.ets.controller.SignUpController">
+<AnchorPane prefHeight="450.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group8.ets.controllers.SignUpController">
 
     <children>
 

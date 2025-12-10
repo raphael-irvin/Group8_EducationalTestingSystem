@@ -7,8 +7,6 @@ It will handle session creation, validation, and termination to ensure secure ac
 it is singleton in nature, ensuring that only one instance of Session exists throughout the application lifecycle.
  */
 
-import group8.ets.database.TopicDatabase;
-
 public class Session {
     private Student loggedInStudent;
 

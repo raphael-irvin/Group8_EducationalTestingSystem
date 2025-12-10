@@ -6,9 +6,8 @@ The Topic class represents a subject or category for quiz questions.
 The Topic will affect which questions are presented to the student during a quiz session through their respective QuestionBank.
  */
 
-import group8.ets.Session;
 import group8.ets.Utility;
-import group8.ets.database.TopicDatabase;
+import group8.ets.databases.TopicDatabase;
 
 public class Topic {
 

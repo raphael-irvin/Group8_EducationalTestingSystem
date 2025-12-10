@@ -1,4 +1,4 @@
-package group8.ets.database;
+package group8.ets.databases;
 
 /*
 CLASS INFORMATION:

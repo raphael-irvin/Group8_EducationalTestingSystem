@@ -6,7 +6,6 @@ The Initialize class is responsible for setting up initial configurations and re
 It may include methods to initialize databases, load configuration files, and prepare necessary services.
  */
 
-import group8.ets.database.TopicDatabase;
 import group8.ets.quizmaterials.topicandquestions.QuestionFactory;
 import group8.ets.quizmaterials.topicandquestions.Topic;
 import group8.ets.quizmaterials.topicandquestions.TopicBuilder;

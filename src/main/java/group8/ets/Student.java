@@ -5,7 +5,7 @@ CLASS INFORMATION:
 The Group8_EducationalTestingSystem.Student (User) class is the primary class used for user sessions and to store respective data of the user
  */
 
-import group8.ets.database.StudentDatabase;
+import group8.ets.databases.StudentDatabase;
 import group8.ets.quizmaterials.QuizSession;
 
 import java.util.ArrayList;

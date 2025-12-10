@@ -1,7 +1,5 @@
 package group8.ets;
 
-import group8.ets.controller.Controller;
-import group8.ets.controller.HomeController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

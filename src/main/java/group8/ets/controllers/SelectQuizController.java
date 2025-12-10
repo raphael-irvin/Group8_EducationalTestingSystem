@@ -1,7 +1,7 @@
-package group8.ets.controller;
+package group8.ets.controllers;
 
 import group8.ets.MainApp;
-import group8.ets.database.TopicDatabase;
+import group8.ets.databases.TopicDatabase;
 import group8.ets.quizmaterials.topicandquestions.Topic;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

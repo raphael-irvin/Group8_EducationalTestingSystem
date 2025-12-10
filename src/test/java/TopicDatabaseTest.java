@@ -1,5 +1,4 @@
-import group8.ets.database.TopicDatabase;
-import group8.ets.quizmaterials.topicandquestions.QuestionFactory;
+import group8.ets.databases.TopicDatabase;
 import group8.ets.quizmaterials.topicandquestions.Topic;
 import group8.ets.quizmaterials.topicandquestions.TopicBuilder;
 import org.junit.Before;

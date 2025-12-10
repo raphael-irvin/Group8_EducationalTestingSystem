@@ -1,5 +1,5 @@
 import group8.ets.Student;
-import group8.ets.database.StudentDatabase;
+import group8.ets.databases.StudentDatabase;
 import org.junit.Test;
 
 public class StudentDatabaseTest {
