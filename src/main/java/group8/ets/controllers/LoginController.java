@@ -1,9 +1,8 @@
 package group8.ets.controllers;
 
 import group8.ets.MainApp;
-import group8.ets.Student;
 import group8.ets.Utility;
-import group8.ets.databases.StudentDatabase;
+import group8.ets.services.AuthService;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -25,17 +24,7 @@ public class LoginController extends Controller{
         String email = emailField.getText();
         String password = passwordField.getText();
 
-        // Verify credentials against StudentDatabase
-        boolean loginSuccessful = false;
-        for (Student student : StudentDatabase.getInstance().getAllStudents()) {
-            if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
-                loginSuccessful = true;
-                Utility.log("Login successful for email: " + email);
-                break;
-            }
-        }
-
-        if (loginSuccessful) {
+        if (AuthService.getInstance().login(email, password)) {
             try {
                 // After successful login, go to Home page
                 MainApp.switchScene("Home.fxml", "Educational Testing System - Home");
@@ -44,7 +33,7 @@ public class LoginController extends Controller{
             }
         }
         else {
-            Utility.log("Login failed for email: " + email);
+            // TODO: Implement Warning Panel for Invalid Credentials
         }
     }
 

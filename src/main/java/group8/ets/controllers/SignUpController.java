@@ -4,6 +4,7 @@ import group8.ets.MainApp;
 import group8.ets.Student;
 import group8.ets.Utility;
 import group8.ets.databases.StudentDatabase;
+import group8.ets.services.AuthService;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -37,31 +38,16 @@ public class SignUpController extends Controller{
         String password = passwordField.getText();
         String name = nameField.getText();
 
-        // Make sure email, password, and name are not empty (basic validation)
-        if (!email.isEmpty() || !password.isEmpty() || !name.isEmpty()) {
-            Utility.log("SignUp attempt with email: " + email + ", name: " + name);
-            // Make sure email is not already used
-            for (Student student : StudentDatabase.getInstance().getAllStudents()) {
-                if (student.getEmail().equals(email)) {
-                    Utility.log("SignUp failed: Email already in use - " + email);
-                    return; // Exit if email is already taken
-                }
-            }
-
-            // Create new Student and add to database
-            Student newStudent = new Student(name, email, password);
-
-            // Redirect to Login screen after successful sign up
+        // Redirect to Log in screen after successful sign up
+        if (AuthService.getInstance().register(name, email, password)) {
             try {
                 // After successful sign up, go back to Login screen
                 MainApp.switchScene("Login.fxml", "Educational Testing System - Login");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-        // If Email, Password, or Name is empty
         } else {
-            Utility.log("SignUp failed: All fields are required.");
+            // TODO: Implement Warning Panel for Invalid Credentials
         }
     }
 
