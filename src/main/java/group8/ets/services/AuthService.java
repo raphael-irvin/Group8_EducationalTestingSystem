@@ -11,6 +11,8 @@ import group8.ets.Student;
 import group8.ets.Utility;
 import group8.ets.databases.StudentDatabase;
 
+import java.util.Objects;
+
 public class AuthService {
 
     // Singleton Instance
@@ -33,12 +35,9 @@ public class AuthService {
     public boolean login(String email, String password) {
         // Verify credentials against StudentDatabase
         boolean loginSuccessful = false;
-        for (Student student : StudentDatabase.getInstance().getAllStudents()) {
-            if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
+        if (StudentDatabase.getInstance().getStudentByEmail(email) != null && Objects.equals(StudentDatabase.getInstance().getStudentByEmail(email).getPassword(), password)) {
                 loginSuccessful = true;
                 Utility.log("Login successful for email: " + email);
-                break;
-            }
         }
         if (!loginSuccessful) {
             Utility.log("Login failed for email: " + email);
@@ -52,15 +51,14 @@ public class AuthService {
         if (!email.isEmpty() || !password.isEmpty() || !name.isEmpty()) {
             Utility.log("SignUp attempt with email: " + email + ", name: " + name);
             // Make sure email is not already used
-            for (Student student : StudentDatabase.getInstance().getAllStudents()) {
-                if (student.getEmail().equals(email)) {
-                    Utility.log("SignUp failed: Email already in use - " + email);
-                    return false; // Exit if email is already taken
-                }
+            if (StudentDatabase.getInstance().getStudentByEmail(email) != null) {
+                Utility.log("SignUp failed: Email already in use - " + email);
+                return false; // Exit if email is already taken
             }
 
             // Create new Student and add to database
             Student newStudent = new Student(name, email, password);
+            StudentDatabase.getInstance().addStudent(newStudent);
             Utility.log("SignUp successful for email: " + email);
             return true;
         }

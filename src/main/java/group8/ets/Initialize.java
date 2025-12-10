@@ -9,6 +9,7 @@ It may include methods to initialize databases, load configuration files, and pr
 import group8.ets.quizmaterials.topicandquestions.QuestionFactory;
 import group8.ets.quizmaterials.topicandquestions.Topic;
 import group8.ets.quizmaterials.topicandquestions.TopicBuilder;
+import group8.ets.services.AuthService;
 
 public class Initialize {
 
@@ -73,8 +74,8 @@ public class Initialize {
 
 
         // Initialize Premade Student Accounts
-        Student student1 = new Student("Alice", "emaila@gmail.com", "alice123");
-        Student student2 = new Student("Bob", "emailb@gmail.com", "bob123");
-        Student student3 = new Student("a", "a", "a");
+        AuthService.getInstance().register("a", "a", "a");
+        AuthService.getInstance().register("b", "b", "b");
+        AuthService.getInstance().register("c", "c", "c");
     }
 }

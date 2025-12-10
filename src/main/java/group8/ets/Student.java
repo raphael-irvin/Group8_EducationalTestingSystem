@@ -28,7 +28,6 @@ public class Student {
         this.password = password;
         this.name = name;
         this.email = email;
-        StudentDatabase.getInstance().addStudent(this);
     }
 
     // Getters and Setters

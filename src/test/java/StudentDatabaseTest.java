@@ -1,12 +1,17 @@
 import group8.ets.Student;
 import group8.ets.databases.StudentDatabase;
+import group8.ets.services.AuthService;
+import org.junit.Before;
 import org.junit.Test;
 
 public class StudentDatabaseTest {
 
-    Student student1 = new Student("Alice", "alice@gmail.com", "password123");
-    Student student2 = new Student("Bob", "bob@gmail.com", "securepass");
-    Student student3 = new Student("Charlie", "charlie@gmail.com", "charliepwd");
+    @Before
+    public void setUp() {
+        AuthService.getInstance().register("a", "a", "a");
+        AuthService.getInstance().register("b", "b", "b");
+        AuthService.getInstance().register("c", "c", "c");
+    }
 
     @Test
     public void studentDatabaseSizeTest() {
@@ -16,8 +21,8 @@ public class StudentDatabaseTest {
 
     @Test
     public void retrieveStudentByEmailTest() {
-        Student retrievedStudent = StudentDatabase.getInstance().getStudentByEmail(student1.getEmail());
+        Student retrievedStudent = StudentDatabase.getInstance().getStudentByEmail("a");
         assert (retrievedStudent != null);
-        assert (retrievedStudent.getName().equals("Alice"));
+        assert (retrievedStudent.getName().equals("a"));
     }
 }
