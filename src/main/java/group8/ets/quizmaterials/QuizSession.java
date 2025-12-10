@@ -10,6 +10,7 @@ import group8.ets.quizmaterials.reports.ReportSummary;
 import group8.ets.quizmaterials.topicandquestions.Question;
 import group8.ets.quizmaterials.topicandquestions.Topic;
 import group8.ets.Student;
+import group8.ets.services.IDGeneratorService;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ public class QuizSession {
 
     // ATTRIBUTES
     // Session Information
+    private final String sessionId;
     private final Student student;
     private final Topic selectedTopic;
     private final int difficultyLevel;
@@ -27,7 +29,11 @@ public class QuizSession {
     private ReportSummary reportSummary;
 
     // Default Constructor
-    public QuizSession(Student student, Topic selectedTopic, int difficultyLevel,IReportFactory iReportFactory) {
+    public QuizSession(Student student, Topic selectedTopic, int difficultyLevel, IReportFactory iReportFactory) {
+        // Get Unique Session ID
+        this.sessionId = IDGeneratorService.getInstance().generateQuizSessionID();
+
+        // Initialize Other Attributes
         this.student = student;
         this.selectedTopic = selectedTopic;
         this.difficultyLevel = difficultyLevel;
@@ -49,6 +55,10 @@ public class QuizSession {
     }
 
     // Getters and Setters
+
+    public String getSessionId() {
+        return sessionId;
+    }
 
     public Student getStudent() {
         return student;

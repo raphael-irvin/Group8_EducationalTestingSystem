@@ -7,6 +7,7 @@ It follows the Builder design pattern to allow for step-by-step construction of 
  */
 
 import group8.ets.Utility;
+import group8.ets.databases.TopicDatabase;
 
 public class TopicBuilder implements ITopicBuilder{
 
@@ -18,6 +19,8 @@ public class TopicBuilder implements ITopicBuilder{
     // Method to build a Topic
     public Topic buildTopic(String topicName, String description) {
         QuestionBank questionBank = new QuestionBank();
-        return new Topic(topicName, description, questionBank);
+        Topic topic = new Topic(topicName, description, questionBank);
+        TopicDatabase.getInstance().store(topic);
+        return topic;
     }
 }

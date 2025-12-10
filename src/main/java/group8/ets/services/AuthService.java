@@ -7,6 +7,7 @@ It will interact with the student database to verify credentials and manage user
 It is singleton in nature, ensuring that only one instance of AuthService exists throughout the application lifecycle.
  */
 
+import group8.ets.Session;
 import group8.ets.Student;
 import group8.ets.Utility;
 import group8.ets.databases.StudentDatabase;
@@ -35,8 +36,10 @@ public class AuthService {
     public boolean login(String email, String password) {
         // Verify credentials against StudentDatabase
         boolean loginSuccessful = false;
-        if (StudentDatabase.getInstance().getStudentByEmail(email) != null && Objects.equals(StudentDatabase.getInstance().getStudentByEmail(email).getPassword(), password)) {
+        Student student = StudentDatabase.getInstance().getStudentByEmail(email);
+        if (student!= null && Objects.equals(student.getPassword(), password)) {
                 loginSuccessful = true;
+            Session.getInstance().setLoggedInStudent(student);
                 Utility.log("Login successful for email: " + email);
         }
         if (!loginSuccessful) {

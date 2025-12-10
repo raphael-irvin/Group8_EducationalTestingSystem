@@ -8,6 +8,7 @@ It is singleton in nature, ensuring that only one instance of StudentDatabase ex
  */
 
 import group8.ets.Student;
+import group8.ets.Utility;
 
 import java.util.HashMap;
 import java.util.List;
@@ -34,6 +35,7 @@ public class StudentDatabase implements IStudentDatabase{
     @Override
     public void addStudent(Student student) {
         studentMap.put(student.getEmail(), student);
+        Utility.log("Student Stored: " + student.getEmail());
     }
 
     @Override

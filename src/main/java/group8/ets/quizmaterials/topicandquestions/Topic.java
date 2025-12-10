@@ -24,7 +24,6 @@ public class Topic {
         this.topicName = topicName;
         this.description = description;
         this.questionBank = questionBank;
-        TopicDatabase.getInstance().store(this);
         Utility.log("Topic created: " + topicName);
     }
 

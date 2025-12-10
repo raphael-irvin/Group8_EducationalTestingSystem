@@ -7,6 +7,7 @@ It implements the Database interface, providing concrete implementations for sto
 it is Singleton in nature, ensuring that only one instance of TopicDatabase exists throughout the application lifecycle.
  */
 
+import group8.ets.Utility;
 import group8.ets.quizmaterials.topicandquestions.Topic;
 
 import java.util.HashMap;
@@ -36,6 +37,7 @@ public class TopicDatabase implements ITopicDatabase{
     @Override
     public void store(Topic topic) {
         topics.put(topic.getTopicName(), topic);
+        Utility.log("Stored Topic: " + topic.getTopicName());
     }
 
     // Retrieve all Topics from the database

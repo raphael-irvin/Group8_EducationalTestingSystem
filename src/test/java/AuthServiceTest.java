@@ -1,9 +1,10 @@
+import group8.ets.Session;
+import group8.ets.databases.StudentDatabase;
 import group8.ets.services.AuthService;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class AuthServiceTest {
 
@@ -33,8 +34,15 @@ public class AuthServiceTest {
         assertFalse(AuthService.getInstance().login("a", "wrongpassword"));
     }
 
+    @Test
     public void loginTest_Failure_NonExistentUser() {
         assertFalse(AuthService.getInstance().login("nonexistent", "nopassword"));
+    }
+
+    @Test
+    public void sessionTest_AfterLogin() {
+        AuthService.getInstance().login("b", "b");
+        assertEquals(StudentDatabase.getInstance().getStudentByEmail("b"), Session.getInstance().getLoggedInStudent());
     }
 
 }
