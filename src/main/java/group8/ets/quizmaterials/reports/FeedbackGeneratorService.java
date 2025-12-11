@@ -21,6 +21,7 @@ public class FeedbackGeneratorService implements IFeedbackGeneratorService{
     // Method to generate feedback based on QuizSession data
     @Override
     public String generateFeedback(QuizSession quizSession, double scorePercentage) {
+        // TODO: Implement OpenAI API integration to generate feedback
         return "placeholder feedback";
     }
 }

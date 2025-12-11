@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="450.0" prefWidth="550.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="group8.ets.controllers.ResultQuizController">
+
+    <!-- Top bar with Return button -->
+    <top>
+        <HBox prefHeight="60.0" prefWidth="550.0"
+              style="-fx-background-color: #f8f8f8; -fx-border-color: #000000; -fx-border-width: 0.5;"
+              BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="10.0" top="15.0" />
+            </padding>
+            <children>
+                <Button onAction="#handleReturnToSelectQuiz"
+                        style="-fx-background-color: #f0f0f0; -fx-border-color: #000000; -fx-border-width: 0.5;"
+                        text="Return" textFill="#c12929" />
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Center: review of questions + my answers inside ScrollPane -->
+    <center>
+        <ScrollPane fitToWidth="true" prefHeight="390.0" prefWidth="380.0"
+                    style="-fx-border-color: #000000; -fx-border-width: 0.5;"
+                    BorderPane.alignment="CENTER">
+            <content>
+                <!-- Controller will create one small VBox card per question -->
+                <VBox fx:id="reviewBox" spacing="10.0" style="-fx-padding: 15;" />
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- Right panel: difficulty, score, feedback -->
+    <right>
+        <HBox prefHeight="390.0" prefWidth="150.0"
+              style="-fx-border-color: #000000; -fx-border-width: 0.5;"
+              BorderPane.alignment="CENTER">
+
+            <children>
+                <VBox prefHeight="390.0" prefWidth="150.0" spacing="20.0">
+                    <padding>
+                        <Insets left="15.0" top="25.0" right="10.0" />
+                    </padding>
+
+                    <!-- Difficulty + score are filled from controller -->
+                    <Label fx:id="difficultyLabel" text="Difficulty: __">
+                        <font><Font size="14.0" /></font>
+                    </Label>
+
+                    <Label fx:id="scoreLabel" text="Score: __%">
+                        <font><Font size="14.0" /></font>
+                    </Label>
+
+                    <Label text="Feedback:">
+                        <font><Font size="16.0" /></font>
+                    </Label>
+
+                    <!-- Feedback text box (wrapped label) -->
+                    <Label fx:id="feedbackLabel"
+                           prefHeight="150.0" prefWidth="120.0"
+                           style="-fx-border-color: #000000; -fx-border-width: 1; -fx-background-color: #ffffff; -fx-padding: 5;"
+                           text="" wrapText="true" />
+                </VBox>
+            </children>
+        </HBox>
+    </right>
+
+</BorderPane>
