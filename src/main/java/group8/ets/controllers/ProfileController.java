@@ -83,6 +83,7 @@ public class ProfileController {
     @FXML
     private void handleSignOut() throws Exception {
         // Log out and go back to the login screen.
+        Session.getInstance().clearSession();
         MainApp.switchScene("Login.fxml", "Login");
     }
 }

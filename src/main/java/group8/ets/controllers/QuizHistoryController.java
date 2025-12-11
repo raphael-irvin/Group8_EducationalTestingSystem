@@ -108,12 +108,13 @@ public class QuizHistoryController {
     @FXML
     private void handleSignOut() throws Exception {
         // Log out and open the login screen.
+        Session.getInstance().clearSession();
         MainApp.switchScene("Login.fxml", "Login");
     }
 
     @FXML
     private void handleGoToResultQuiz() throws Exception {
-        // For now I still open the last result screen only.
+        // For now, I still open the last result screen only.
         if (currentSelectedSessionID != null) {
             MainApp.switchScene("ResultQuiz.fxml", "Result Quiz");
         }

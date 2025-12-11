@@ -38,15 +38,9 @@ public class QuizSession {
         this.selectedTopic = selectedTopic;
         this.difficultyLevel = difficultyLevel;
         this.reportFactory = iReportFactory;
-        // TODO: Initialize Necessary Setups (Questions, Index, Timer, etc.)
 
         // Setup Questions based on Topic and Difficulty Level
         this.questions = selectedTopic.getQuestionBank().getRandomQuestions(10, difficultyLevel);
-    }
-
-    // Session Operations
-    public void startQuiz() {
-        // TODO: Logic to start the quiz session
     }
 
     public void finishQuiz() {

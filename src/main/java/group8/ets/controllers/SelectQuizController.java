@@ -1,6 +1,7 @@
 package group8.ets.controllers;
 
 import group8.ets.MainApp;
+import group8.ets.Session;
 import group8.ets.databases.TopicDatabase;
 import group8.ets.quizmaterials.topicandquestions.Topic;
 import javafx.fxml.FXML;
@@ -24,15 +25,13 @@ public class SelectQuizController {
     @FXML
     private ChoiceBox<String> difficultyChoiceBox;  // Easy / Medium / Hard
 
-    private Topic selectedTopic;           // current topic I picked
-
     @FXML
     private void initialize() {
-        // I load difficulty choices
+        // Load difficulty options
         difficultyChoiceBox.getItems().addAll("Easy", "Medium", "Hard");
         difficultyChoiceBox.setValue("Easy");
 
-        // I build the topic buttons from my mock topics
+        // Build the list of topics dynamically from TopicDatabase
         topicsContainer.getChildren().clear();
 
         topicsContainer.getChildren().clear();
@@ -51,15 +50,14 @@ public class SelectQuizController {
             topicsContainer.getChildren().add(btn);
         }
 
-        // I select the first topic by default
+        // Select the first topic by default
         if (!TopicDatabase.getInstance().getAll().isEmpty() && !topicsContainer.getChildren().isEmpty()) {
-            selectTopic(TopicDatabase.getInstance().getAll().getFirst(), (Button) topicsContainer.getChildren().get(0));
+            selectTopic(TopicDatabase.getInstance().getAll().getFirst(), (Button) topicsContainer.getChildren().getFirst());
         }
     }
 
-    // This method updates the right side when I click a topic
+    // Updates the selected topic details and highlights the selected button
     private void selectTopic(Topic topic, Button clickedButton) {
-        selectedTopic = topic;
 
         topicTitleLabel.setText(topic.getTopicName());
         topicDescLabel.setText(topic.getDescription());
@@ -80,7 +78,6 @@ public class SelectQuizController {
 
     @FXML
     private void handleStartQuiz() throws Exception {
-        // I start the quiz session (title + difficulty + total questions)
         // TODO: Pass selectedTopic and difficulty to current quiz session
 
         MainApp.switchScene("Quiz.fxml", "Quiz");
@@ -98,6 +95,7 @@ public class SelectQuizController {
 
     @FXML
     private void handleSignOut() throws Exception {
+        Session.getInstance().clearSession();
         MainApp.switchScene("Login.fxml", "Login");
     }
 }

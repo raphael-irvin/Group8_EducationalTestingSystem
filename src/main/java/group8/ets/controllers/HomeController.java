@@ -1,6 +1,7 @@
 package group8.ets.controllers;
 
 import group8.ets.MainApp;
+import group8.ets.Session;
 import group8.ets.Utility;
 import group8.ets.databases.TopicDatabase;
 import group8.ets.quizmaterials.topicandquestions.Topic;
@@ -45,6 +46,7 @@ public class HomeController extends Controller{
 
     @FXML
     private void handleSignOut() {
+        Session.getInstance().clearSession();
         MainApp.switchScene("Login.fxml", "Login");
     }
 }
