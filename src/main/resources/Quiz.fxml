@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="450.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group8.ets.controllers.QuizController">
+
+    <!-- Top bar -->
+    <top>
+        <HBox prefHeight="60.0" prefWidth="550.0" style="-fx-background-color: #f0f0f0; -fx-border-color: black; -fx-border-width: 0.5;">
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="10.0" top="15.0" />
+            </padding>
+            <children>
+                <Button mnemonicParsing="false" onAction="#handleCancelQuiz" style="-fx-background-color: #f0f0f0; -fx-border-color: black; -fx-border-width: 0.5;" text="Cancel" textFill="#c12929" />
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Questions inside ScrollPane -->
+    <center>
+        <ScrollPane fitToWidth="true" prefHeight="350.0" prefWidth="300.0" style="-fx-border-color: black; -fx-border-width: 0.4;">
+            <content>
+                <VBox fx:id="questionsBox" spacing="15.0" style="-fx-padding: 15;" />
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- Right side: difficulty + answers info + Finish -->
+    <right>
+        <HBox prefHeight="390.0" prefWidth="180.0" style="-fx-border-color: black; -fx-border-width: 0.5;">
+            <children>
+                <VBox prefHeight="390.0" prefWidth="180.0" spacing="90.0" style="-fx-border-color: black; -fx-border-width: 0.0;">
+                    <children>
+                        <!-- This shows difficulty of the current quiz -->
+                        <Label fx:id="topicDifficultyLabel" text="Topic difficulty: __">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+
+                        <!-- This shows how many questions I answered -->
+                        <Label fx:id="answersInfoLabel" text=".../10 answers">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+
+                <Button layoutX="55.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleFinishQuiz" style="-fx-background-color: #f0f0f0; -fx-border-color: black; -fx-border-width: 0.5;" text="Finish" textFill="#c12929">
+                    <HBox.margin>
+                        <Insets left="-113.0" top="300.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </right>
+
+</BorderPane>

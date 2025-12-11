@@ -16,7 +16,7 @@ public class TrueOrFalseQuestion extends Question {
 
     // Constructor
     protected TrueOrFalseQuestion(String questionText, int difficultyLevel, boolean correctAnswer) {
-        super(questionText, difficultyLevel);
+        super(questionText, difficultyLevel, "TrueOrFalse");
         this.correctAnswer = correctAnswer;
     }
 

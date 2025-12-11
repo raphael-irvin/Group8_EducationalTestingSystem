@@ -13,13 +13,15 @@ public abstract class Question {
     // Question Information
     private final String questionText;
     private final int difficultyLevel;
+    private final String questionType;
 
     // NOTE: Answer Attributes are declared separately in each subclass due to differing types
 
     // Default Constructor is protected to prevent direct instantiation
-    protected Question(String questionText, int difficultyLevel) {
+    protected Question(String questionText, int difficultyLevel, String questionType) {
         this.questionText = questionText;
         this.difficultyLevel = difficultyLevel;
+        this.questionType = questionType;
     }
 
     // Getters and Setters
@@ -30,6 +32,10 @@ public abstract class Question {
 
     public int getDifficultyLevel() {
         return difficultyLevel;
+    }
+
+    public String getQuestionType() {
+        return questionType;
     }
 
     // Abstract Methods

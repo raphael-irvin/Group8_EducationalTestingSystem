@@ -19,7 +19,7 @@ public class MultipleChoiceQuestion extends Question {
 
     // Constructor
     protected MultipleChoiceQuestion(String questionText, int difficultyLevel, ArrayList<String> options, String correctAnswer) {
-        super(questionText, difficultyLevel);
+        super(questionText, difficultyLevel, "MultipleChoice");
         this.options = options;
         this.correctAnswer = correctAnswer;
         currentAnswer = ""; // No answer selected initially

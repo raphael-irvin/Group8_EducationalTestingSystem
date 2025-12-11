@@ -4,12 +4,15 @@ import group8.ets.MainApp;
 import group8.ets.Session;
 import group8.ets.databases.TopicDatabase;
 import group8.ets.quizmaterials.topicandquestions.Topic;
+import group8.ets.services.QuizService;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+
+import java.util.Objects;
 
 public class SelectQuizController {
 
@@ -79,6 +82,25 @@ public class SelectQuizController {
     @FXML
     private void handleStartQuiz() throws Exception {
         // TODO: Pass selectedTopic and difficulty to current quiz session
+        // Translate Difficulty Value to Integer (Easy = 1, Medium = 2, Hard = 3)
+        int difficultyLevel;
+
+        if (difficultyChoiceBox.getValue() == null) {
+            // Default to Easy if no selection
+            difficultyChoiceBox.setValue("Easy");
+        }
+
+        if (Objects.equals(difficultyChoiceBox.getValue(), "Easy")) {
+            difficultyLevel = 1;
+        } else if (Objects.equals(difficultyChoiceBox.getValue(), "Medium")) {
+            difficultyLevel = 2;
+        } else {
+            difficultyLevel = 3;
+        }
+
+        Session.getInstance().setCurrentQuizSession(QuizService.getInstance().startQuizSession(Session.getInstance().getLoggedInStudent(),
+                TopicDatabase.getInstance().getTopicByName(topicTitleLabel.getText()),
+                difficultyLevel));
 
         MainApp.switchScene("Quiz.fxml", "Quiz");
     }
